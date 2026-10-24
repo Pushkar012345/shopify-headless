@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pushkar Store – Headless Shopify Storefront
+
+A headless e-commerce storefront built with **Next.js** that pulls live products from a **Shopify** store using the **Storefront API (GraphQL)**.
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-10b981?style=for-the-badge)](https://shopify-headless-lemon-psi.vercel.app/)
+
+## Features
+
+- Product listing page with live data from Shopify
+- Dynamic product detail pages (`/products/[handle]`)
+- Responsive layout with header, hero banner and footer
+- Server-side data fetching with 60s revalidation
+- Environment-based config (no secrets in the repo)
+
+## Tech Stack
+
+| Area | Technology |
+|------|------------|
+| Framework | Next.js 16 (App Router) |
+| Styling | Tailwind CSS |
+| Data | Shopify Storefront API (GraphQL) |
+| Hosting | Vercel |
 
 ## Getting Started
 
-First, run the development server:
+```bash
+git clone https://github.com/Pushkar012345/shopify-headless.git
+cd shopify-headless
+npm install
+```
+
+Create a `.env.local` file:
+
+```
+SHOPIFY_STORE_DOMAIN=your-store.myshopify.com
+SHOPIFY_STOREFRONT_TOKEN=your_storefront_access_token
+```
+
+Run the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  page.js                  # Home: product grid
+  products/[handle]/page.js # Product detail page
+components/
+  SiteShell.js             # Shared header, hero and footer
+lib/
+  shopify.js               # Storefront API fetch helper
+```
 
-## Learn More
+## Related Work
 
-To learn more about Next.js, take a look at the following resources:
+Also built a custom Shopify theme (Liquid) with merchant-editable sections, developed with the Shopify CLI.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Pushkar Pawar**
+[GitHub](https://github.com/Pushkar012345) · [LinkedIn](https://www.linkedin.com/in/pushkarpawar314/)
